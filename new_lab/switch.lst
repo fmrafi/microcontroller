@@ -1,0 +1,68 @@
+   1               		.file	"switch.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 B89A      		sbi 55-32,0
+  25               	.LM3:
+  26 0002 B99A      		sbi 55-32,1
+  27               	.LM4:
+  28 0004 BA98      		cbi 55-32,2
+  29               	.LM5:
+  30 0006 C29A      		sbi 56-32,2
+  31               	.LM6:
+  32 0008 C19A      		sbi 56-32,1
+  33 000a 80E0      		ldi r24,lo8(0)
+  34 000c 90E0      		ldi r25,hi8(0)
+  35               	.LVL0:
+  36               	.LM7:
+  37 000e 31E0      		ldi r19,lo8(1)
+  38               	.LM8:
+  39 0010 22E0      		ldi r18,lo8(2)
+  40               	.L7:
+  41               	.LM9:
+  42 0012 B29B      		sbis 54-32,2
+  43 0014 00C0      		rjmp .L2
+  44 0016 80E0      		ldi r24,lo8(0)
+  45 0018 90E0      		ldi r25,hi8(0)
+  46 001a 00C0      		rjmp .L7
+  47               	.L2:
+  48               	.LM10:
+  49 001c 0097      		sbiw r24,0
+  50 001e 01F4      		brne .L7
+  51               	.LM11:
+  52 0020 88B3      		in r24,56-32
+  53               	.LVL1:
+  54 0022 8327      		eor r24,r19
+  55 0024 88BB      		out 56-32,r24
+  56               	.LM12:
+  57 0026 88B3      		in r24,56-32
+  58 0028 8227      		eor r24,r18
+  59 002a 88BB      		out 56-32,r24
+  60 002c 81E0      		ldi r24,lo8(1)
+  61 002e 90E0      		ldi r25,hi8(1)
+  62               	.LVL2:
+  63 0030 00C0      		rjmp .L7
+  64               	.LFE6:
+  90               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 switch.c
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:2      *ABS*:0000003f __SREG__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:3      *ABS*:0000003e __SP_H__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:4      *ABS*:0000003d __SP_L__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:5      *ABS*:00000034 __CCP__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\User\AppData\Local\Temp/cc9hXJXg.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

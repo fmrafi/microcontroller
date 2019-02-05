@@ -1,0 +1,131 @@
+   1               		.file	"s.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 8FEF      		ldi r24,lo8(-1)
+  25 0002 87BB      		out 55-32,r24
+  26               	.LBB7:
+  27               	.LBB8:
+  28               	.LM3:
+  29 0004 87B1      		in r24,39-32
+  30 0006 806C      		ori r24,lo8(-64)
+  31 0008 87B9      		out 39-32,r24
+  32               	.LM4:
+  33 000a 86B1      		in r24,38-32
+  34 000c 8760      		ori r24,lo8(7)
+  35 000e 86B9      		out 38-32,r24
+  36               	.LM5:
+  37 0010 379A      		sbi 38-32,7
+  38               	.LBE8:
+  39               	.LBE7:
+  40               	.LBB9:
+  41               	.LM6:
+  42 0012 4FEF      		ldi r20,lo8(-1)
+  43               	.LM7:
+  44 0014 32E0      		ldi r19,lo8(2)
+  45               	.LM8:
+  46 0016 21E0      		ldi r18,lo8(1)
+  47               	.L8:
+  48               	.LBB10:
+  49               	.LBB11:
+  50               	.LM9:
+  51 0018 389A      		sbi 39-32,0
+  52               	.LM10:
+  53 001a 369A      		sbi 38-32,6
+  54               	.L2:
+  55               	.LM11:
+  56 001c 3699      		sbic 38-32,6
+  57 001e 00C0      		rjmp .L2
+  58               	.LM12:
+  59 0020 84B1      		in r24,36-32
+  60 0022 95B1      		in r25,(36)+1-32
+  61               	.LBE11:
+  62               	.LBE10:
+  63               	.LM13:
+  64 0024 8C33      		cpi r24,60
+  65 0026 9105      		cpc r25,__zero_reg__
+  66 0028 04F4      		brge .L3
+  67               	.LM14:
+  68 002a 28BB      		out 56-32,r18
+  69 002c 00C0      		rjmp .L8
+  70               	.L3:
+  71               	.LM15:
+  72 002e 8335      		cpi r24,83
+  73 0030 9105      		cpc r25,__zero_reg__
+  74 0032 04F0      		brlt .L5
+  75               	.LM16:
+  76 0034 38BB      		out 56-32,r19
+  77 0036 00C0      		rjmp .L8
+  78               	.L5:
+  79               	.LM17:
+  80 0038 48BB      		out 56-32,r20
+  81 003a 00C0      		rjmp .L8
+  82               	.LBE9:
+  83               	.LFE6:
+  85               	.global	adc_init
+  87               	adc_init:
+  88               	.LFB7:
+  89               	.LM18:
+  90               	/* prologue: function */
+  91               	/* frame size = 0 */
+  92               	.LM19:
+  93 003c 87B1      		in r24,39-32
+  94 003e 806C      		ori r24,lo8(-64)
+  95 0040 87B9      		out 39-32,r24
+  96               	.LM20:
+  97 0042 86B1      		in r24,38-32
+  98 0044 8760      		ori r24,lo8(7)
+  99 0046 86B9      		out 38-32,r24
+ 100               	.LM21:
+ 101 0048 379A      		sbi 38-32,7
+ 102               	/* epilogue start */
+ 103               	.LM22:
+ 104 004a 0895      		ret
+ 105               	.LFE7:
+ 107               	.global	adc_read
+ 109               	adc_read:
+ 110               	.LFB8:
+ 111               	.LM23:
+ 112               	/* prologue: function */
+ 113               	/* frame size = 0 */
+ 114               	.LM24:
+ 115 004c 389A      		sbi 39-32,0
+ 116               	.LM25:
+ 117 004e 369A      		sbi 38-32,6
+ 118               	.L12:
+ 119               	.LM26:
+ 120 0050 3699      		sbic 38-32,6
+ 121 0052 00C0      		rjmp .L12
+ 122               	.LM27:
+ 123 0054 24B1      		in r18,36-32
+ 124 0056 35B1      		in r19,(36)+1-32
+ 125               	.LM28:
+ 126 0058 C901      		movw r24,r18
+ 127               	/* epilogue start */
+ 128 005a 0895      		ret
+ 129               	.LFE8:
+ 171               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 s.c
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:2      *ABS*:0000003f __SREG__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:3      *ABS*:0000003e __SP_H__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:4      *ABS*:0000003d __SP_L__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:5      *ABS*:00000034 __CCP__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:18     .text:00000000 main
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:87     .text:0000003c adc_init
+C:\Users\FMRafi51\AppData\Local\Temp/ccCpQQcw.s:109    .text:0000004c adc_read
+
+NO UNDEFINED SYMBOLS
